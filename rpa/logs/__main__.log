@@ -313,3 +313,65 @@ Stacktrace:
 
 2024-12-29 13:37:28,989 - __main__ - ERROR - 登录失败！
 2024-12-29 13:37:29,207 - __main__ - INFO - 浏览器已关闭
+2024-12-29 13:40:49,525 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 13:40:49,540 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 13:40:49,540 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 13:41:01,671 - __main__ - ERROR - 密码登录过程中出错: Message: 
+Stacktrace:
+0   undetected_chromedriver             0x00000001073e1268 undetected_chromedriver + 7098984
+1   undetected_chromedriver             0x00000001073d913a undetected_chromedriver + 7065914
+2   undetected_chromedriver             0x0000000106d7dd70 undetected_chromedriver + 400752
+3   undetected_chromedriver             0x0000000106dccbd3 undetected_chromedriver + 723923
+4   undetected_chromedriver             0x0000000106dcced1 undetected_chromedriver + 724689
+5   undetected_chromedriver             0x0000000106e12e74 undetected_chromedriver + 1011316
+6   undetected_chromedriver             0x0000000106df123d undetected_chromedriver + 873021
+7   undetected_chromedriver             0x0000000106e1015e undetected_chromedriver + 999774
+8   undetected_chromedriver             0x0000000106df0fb3 undetected_chromedriver + 872371
+9   undetected_chromedriver             0x0000000106dbf5c2 undetected_chromedriver + 669122
+10  undetected_chromedriver             0x0000000106dc059e undetected_chromedriver + 673182
+11  undetected_chromedriver             0x00000001073a6020 undetected_chromedriver + 6856736
+12  undetected_chromedriver             0x00000001073aa050 undetected_chromedriver + 6873168
+13  undetected_chromedriver             0x00000001073883d7 undetected_chromedriver + 6734807
+14  undetected_chromedriver             0x00000001073aa9ee undetected_chromedriver + 6875630
+15  undetected_chromedriver             0x0000000107377c14 undetected_chromedriver + 6667284
+16  undetected_chromedriver             0x00000001073c7778 undetected_chromedriver + 6993784
+17  undetected_chromedriver             0x00000001073c7936 undetected_chromedriver + 6994230
+18  undetected_chromedriver             0x00000001073d8d18 undetected_chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 13:41:01,672 - __main__ - INFO - 尝试使用短信验证码登录
+2024-12-29 13:41:01,875 - __main__ - INFO - 已切换到短信登录
+2024-12-29 13:41:02,013 - __main__ - INFO - 已输入手机号
+2024-12-29 13:41:12,292 - __main__ - ERROR - 短信验证码登录过程中出错: Message: 
+Stacktrace:
+0   undetected_chromedriver             0x00000001073e1268 undetected_chromedriver + 7098984
+1   undetected_chromedriver             0x00000001073d913a undetected_chromedriver + 7065914
+2   undetected_chromedriver             0x0000000106d7dd70 undetected_chromedriver + 400752
+3   undetected_chromedriver             0x0000000106dccbd3 undetected_chromedriver + 723923
+4   undetected_chromedriver             0x0000000106dcced1 undetected_chromedriver + 724689
+5   undetected_chromedriver             0x0000000106e12e74 undetected_chromedriver + 1011316
+6   undetected_chromedriver             0x0000000106df123d undetected_chromedriver + 873021
+7   undetected_chromedriver             0x0000000106e1015e undetected_chromedriver + 999774
+8   undetected_chromedriver             0x0000000106df0fb3 undetected_chromedriver + 872371
+9   undetected_chromedriver             0x0000000106dbf5c2 undetected_chromedriver + 669122
+10  undetected_chromedriver             0x0000000106dc059e undetected_chromedriver + 673182
+11  undetected_chromedriver             0x00000001073a6020 undetected_chromedriver + 6856736
+12  undetected_chromedriver             0x00000001073aa050 undetected_chromedriver + 6873168
+13  undetected_chromedriver             0x00000001073883d7 undetected_chromedriver + 6734807
+14  undetected_chromedriver             0x00000001073aa9ee undetected_chromedriver + 6875630
+15  undetected_chromedriver             0x0000000107377c14 undetected_chromedriver + 6667284
+16  undetected_chromedriver             0x00000001073c7778 undetected_chromedriver + 6993784
+17  undetected_chromedriver             0x00000001073c7936 undetected_chromedriver + 6994230
+18  undetected_chromedriver             0x00000001073d8d18 undetected_chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 13:41:12,293 - __main__ - ERROR - 所有登录方式均失败
+2024-12-29 13:41:12,293 - __main__ - ERROR - 登录失败！
+2024-12-29 13:41:12,729 - __main__ - INFO - 浏览器已关闭
+2024-12-29 13:46:51,454 - __main__ - ERROR - 使用Cookies登录时出错: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2024-12-29 13:46:51,473 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 13:46:51,516 - __main__ - ERROR - 登录过程中出错: HTTPConnectionPool(host='localhost', port=58262): Max retries exceeded with url: /session/40a1347b532e9b8f74a4229af89c396e/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10e131fd0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2024-12-29 13:46:51,534 - __main__ - ERROR - 登录失败！
+2024-12-29 13:46:52,118 - __main__ - INFO - 浏览器已关闭

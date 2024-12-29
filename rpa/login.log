@@ -275,3 +275,346 @@ Stacktrace:
 17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
 18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
 
+2024-12-29 13:47:17,748 - INFO - ====== WebDriver manager ======
+2024-12-29 13:47:17,934 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:47:18,139 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:47:18,776 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:47:20,687 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:47:22,023 - INFO - 成功打开知乎登录页面
+2024-12-29 13:47:33,649 - ERROR - 登录过程中出现错误: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000106e26268 chromedriver + 7098984
+1   chromedriver                        0x0000000106e1e13a chromedriver + 7065914
+2   chromedriver                        0x00000001067c2d70 chromedriver + 400752
+3   chromedriver                        0x0000000106811bd3 chromedriver + 723923
+4   chromedriver                        0x0000000106811ed1 chromedriver + 724689
+5   chromedriver                        0x0000000106857e74 chromedriver + 1011316
+6   chromedriver                        0x000000010683623d chromedriver + 873021
+7   chromedriver                        0x000000010685515e chromedriver + 999774
+8   chromedriver                        0x0000000106835fb3 chromedriver + 872371
+9   chromedriver                        0x00000001068045c2 chromedriver + 669122
+10  chromedriver                        0x000000010680559e chromedriver + 673182
+11  chromedriver                        0x0000000106deb020 chromedriver + 6856736
+12  chromedriver                        0x0000000106def050 chromedriver + 6873168
+13  chromedriver                        0x0000000106dcd3d7 chromedriver + 6734807
+14  chromedriver                        0x0000000106def9ee chromedriver + 6875630
+15  chromedriver                        0x0000000106dbcc14 chromedriver + 6667284
+16  chromedriver                        0x0000000106e0c778 chromedriver + 6993784
+17  chromedriver                        0x0000000106e0c936 chromedriver + 6994230
+18  chromedriver                        0x0000000106e1dd18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 13:50:29,548 - INFO - ====== WebDriver manager ======
+2024-12-29 13:50:29,742 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:50:30,296 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:50:31,066 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:50:32,766 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:50:34,323 - INFO - 成功打开知乎登录页面
+2024-12-29 13:50:42,313 - INFO - 已输入账号密码
+2024-12-29 13:50:44,329 - INFO - 已点击登录按钮
+2024-12-29 13:50:46,361 - WARNING - 检测到验证码，请在30秒内手动完成验证
+2024-12-29 13:50:52,459 - INFO - 验证码验证成功，登录成功！
+2024-12-29 13:51:56,247 - INFO - ====== WebDriver manager ======
+2024-12-29 13:51:56,439 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:51:56,683 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:51:57,224 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:51:59,155 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:51:59,302 - INFO - 成功打开知乎登录页面
+2024-12-29 13:52:08,092 - INFO - 已输入账号密码
+2024-12-29 13:52:09,882 - INFO - 已点击登录按钮
+2024-12-29 13:52:11,903 - WARNING - 检测到验证码，请在30秒内手动完成验证
+2024-12-29 13:52:19,161 - INFO - 验证码验证成功，登录成功！
+2024-12-29 13:54:05,052 - INFO - ====== WebDriver manager ======
+2024-12-29 13:54:05,271 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:54:05,822 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:54:06,318 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:54:08,228 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:54:09,693 - INFO - 成功打开知乎登录页面
+2024-12-29 13:54:17,172 - ERROR - 登录过程中出现错误: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x000000010edfc268 chromedriver + 7098984
+1   chromedriver                        0x000000010edf413a chromedriver + 7065914
+2   chromedriver                        0x000000010e798d70 chromedriver + 400752
+3   chromedriver                        0x000000010e79ed1e chromedriver + 425246
+4   chromedriver                        0x000000010e7a1253 chromedriver + 434771
+5   chromedriver                        0x000000010e7a1303 chromedriver + 434947
+6   chromedriver                        0x000000010e7e993a chromedriver + 731450
+7   chromedriver                        0x000000010e7de352 chromedriver + 684882
+8   chromedriver                        0x000000010e80c212 chromedriver + 872978
+9   chromedriver                        0x000000010e7dc2b8 chromedriver + 676536
+10  chromedriver                        0x000000010e80c3ce chromedriver + 873422
+11  chromedriver                        0x000000010e82b15e chromedriver + 999774
+12  chromedriver                        0x000000010e80bfb3 chromedriver + 872371
+13  chromedriver                        0x000000010e7da5c2 chromedriver + 669122
+14  chromedriver                        0x000000010e7db59e chromedriver + 673182
+15  chromedriver                        0x000000010edc1020 chromedriver + 6856736
+16  chromedriver                        0x000000010edc5050 chromedriver + 6873168
+17  chromedriver                        0x000000010eda33d7 chromedriver + 6734807
+18  chromedriver                        0x000000010edc59ee chromedriver + 6875630
+19  chromedriver                        0x000000010ed92c14 chromedriver + 6667284
+20  chromedriver                        0x000000010ede2778 chromedriver + 6993784
+21  chromedriver                        0x000000010ede2936 chromedriver + 6994230
+22  chromedriver                        0x000000010edf3d18 chromedriver + 7064856
+23  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+24  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 13:55:00,336 - INFO - ====== WebDriver manager ======
+2024-12-29 13:55:00,538 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:55:01,030 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:55:01,227 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:55:03,108 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:55:04,670 - INFO - 成功打开知乎登录页面
+2024-12-29 13:55:07,430 - ERROR - 登录过程中出现错误: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x0000000108b75268 chromedriver + 7098984
+1   chromedriver                        0x0000000108b6d13a chromedriver + 7065914
+2   chromedriver                        0x0000000108511d70 chromedriver + 400752
+3   chromedriver                        0x0000000108517d1e chromedriver + 425246
+4   chromedriver                        0x000000010851a54e chromedriver + 435534
+5   chromedriver                        0x00000001085a5238 chromedriver + 1004088
+6   chromedriver                        0x0000000108585212 chromedriver + 872978
+7   chromedriver                        0x00000001085a415e chromedriver + 999774
+8   chromedriver                        0x0000000108584fb3 chromedriver + 872371
+9   chromedriver                        0x00000001085535c2 chromedriver + 669122
+10  chromedriver                        0x000000010855459e chromedriver + 673182
+11  chromedriver                        0x0000000108b3a020 chromedriver + 6856736
+12  chromedriver                        0x0000000108b3e050 chromedriver + 6873168
+13  chromedriver                        0x0000000108b1c3d7 chromedriver + 6734807
+14  chromedriver                        0x0000000108b3e9ee chromedriver + 6875630
+15  chromedriver                        0x0000000108b0bc14 chromedriver + 6667284
+16  chromedriver                        0x0000000108b5b778 chromedriver + 6993784
+17  chromedriver                        0x0000000108b5b936 chromedriver + 6994230
+18  chromedriver                        0x0000000108b6cd18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 13:55:58,170 - INFO - ====== WebDriver manager ======
+2024-12-29 13:55:58,377 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:55:58,571 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:55:59,091 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:56:01,151 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:56:02,096 - INFO - 成功打开知乎登录页面
+2024-12-29 13:56:09,321 - INFO - 未找到密码登录选项卡，继续使用当前登录方式
+2024-12-29 13:56:17,443 - INFO - 已输入账号密码
+2024-12-29 13:56:19,339 - INFO - 已点击登录按钮
+2024-12-29 13:56:21,353 - WARNING - 检测到验证码，请在30秒内手动完成验证
+2024-12-29 13:56:27,523 - INFO - 验证码验证成功，登录成功！
+2024-12-29 13:56:44,755 - INFO - ====== WebDriver manager ======
+2024-12-29 13:56:44,947 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:56:45,859 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:56:46,698 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:56:48,433 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:56:49,614 - INFO - 成功打开知乎登录页面
+2024-12-29 13:57:01,328 - ERROR - 登录过程中出现错误: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100b5e268 chromedriver + 7098984
+1   chromedriver                        0x0000000100b5613a chromedriver + 7065914
+2   chromedriver                        0x00000001004fad70 chromedriver + 400752
+3   chromedriver                        0x0000000100549bd3 chromedriver + 723923
+4   chromedriver                        0x0000000100549ed1 chromedriver + 724689
+5   chromedriver                        0x000000010058fe74 chromedriver + 1011316
+6   chromedriver                        0x000000010056e23d chromedriver + 873021
+7   chromedriver                        0x000000010058d15e chromedriver + 999774
+8   chromedriver                        0x000000010056dfb3 chromedriver + 872371
+9   chromedriver                        0x000000010053c5c2 chromedriver + 669122
+10  chromedriver                        0x000000010053d59e chromedriver + 673182
+11  chromedriver                        0x0000000100b23020 chromedriver + 6856736
+12  chromedriver                        0x0000000100b27050 chromedriver + 6873168
+13  chromedriver                        0x0000000100b053d7 chromedriver + 6734807
+14  chromedriver                        0x0000000100b279ee chromedriver + 6875630
+15  chromedriver                        0x0000000100af4c14 chromedriver + 6667284
+16  chromedriver                        0x0000000100b44778 chromedriver + 6993784
+17  chromedriver                        0x0000000100b44936 chromedriver + 6994230
+18  chromedriver                        0x0000000100b55d18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 13:58:09,498 - INFO - ====== WebDriver manager ======
+2024-12-29 13:58:09,694 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:58:10,310 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:58:11,121 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:58:12,888 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:58:14,369 - INFO - 成功打开知乎登录页面
+2024-12-29 13:58:26,071 - INFO - 找到用户名输入框 (使用选择器: input[name="username"])
+2024-12-29 13:58:51,370 - INFO - 找到密码输入框 (使用选择器: .Login-content input[name="password"])
+2024-12-29 13:58:51,377 - ERROR - 输入文本失败: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x0000000108866268 chromedriver + 7098984
+1   chromedriver                        0x000000010885e13a chromedriver + 7065914
+2   chromedriver                        0x0000000108202d70 chromedriver + 400752
+3   chromedriver                        0x0000000108208d1e chromedriver + 425246
+4   chromedriver                        0x000000010820b54e chromedriver + 435534
+5   chromedriver                        0x0000000108296238 chromedriver + 1004088
+6   chromedriver                        0x0000000108276212 chromedriver + 872978
+7   chromedriver                        0x000000010829515e chromedriver + 999774
+8   chromedriver                        0x0000000108275fb3 chromedriver + 872371
+9   chromedriver                        0x00000001082445c2 chromedriver + 669122
+10  chromedriver                        0x000000010824559e chromedriver + 673182
+11  chromedriver                        0x000000010882b020 chromedriver + 6856736
+12  chromedriver                        0x000000010882f050 chromedriver + 6873168
+13  chromedriver                        0x000000010880d3d7 chromedriver + 6734807
+14  chromedriver                        0x000000010882f9ee chromedriver + 6875630
+15  chromedriver                        0x00000001087fcc14 chromedriver + 6667284
+16  chromedriver                        0x000000010884c778 chromedriver + 6993784
+17  chromedriver                        0x000000010884c936 chromedriver + 6994230
+18  chromedriver                        0x000000010885dd18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 13:58:51,379 - ERROR - 登录过程中出现错误: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x0000000108866268 chromedriver + 7098984
+1   chromedriver                        0x000000010885e13a chromedriver + 7065914
+2   chromedriver                        0x0000000108202d70 chromedriver + 400752
+3   chromedriver                        0x0000000108208d1e chromedriver + 425246
+4   chromedriver                        0x000000010820b54e chromedriver + 435534
+5   chromedriver                        0x0000000108296238 chromedriver + 1004088
+6   chromedriver                        0x0000000108276212 chromedriver + 872978
+7   chromedriver                        0x000000010829515e chromedriver + 999774
+8   chromedriver                        0x0000000108275fb3 chromedriver + 872371
+9   chromedriver                        0x00000001082445c2 chromedriver + 669122
+10  chromedriver                        0x000000010824559e chromedriver + 673182
+11  chromedriver                        0x000000010882b020 chromedriver + 6856736
+12  chromedriver                        0x000000010882f050 chromedriver + 6873168
+13  chromedriver                        0x000000010880d3d7 chromedriver + 6734807
+14  chromedriver                        0x000000010882f9ee chromedriver + 6875630
+15  chromedriver                        0x00000001087fcc14 chromedriver + 6667284
+16  chromedriver                        0x000000010884c778 chromedriver + 6993784
+17  chromedriver                        0x000000010884c936 chromedriver + 6994230
+18  chromedriver                        0x000000010885dd18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 13:59:35,853 - INFO - ====== WebDriver manager ======
+2024-12-29 13:59:36,061 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:59:36,749 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:59:37,255 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:59:39,228 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:59:40,321 - INFO - 成功打开知乎登录页面
+2024-12-29 13:59:53,798 - INFO - 找到用户名输入框 (使用选择器: input[name="username"])
+2024-12-29 14:00:14,782 - INFO - 找到密码输入框 (使用选择器: .Login-content input[name="password"])
+2024-12-29 14:00:16,813 - ERROR - 输入文本失败: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x0000000103465268 chromedriver + 7098984
+1   chromedriver                        0x000000010345d13a chromedriver + 7065914
+2   chromedriver                        0x0000000102e01d70 chromedriver + 400752
+3   chromedriver                        0x0000000102e07d1e chromedriver + 425246
+4   chromedriver                        0x0000000102e0a54e chromedriver + 435534
+5   chromedriver                        0x0000000102e95238 chromedriver + 1004088
+6   chromedriver                        0x0000000102e75212 chromedriver + 872978
+7   chromedriver                        0x0000000102e9415e chromedriver + 999774
+8   chromedriver                        0x0000000102e74fb3 chromedriver + 872371
+9   chromedriver                        0x0000000102e435c2 chromedriver + 669122
+10  chromedriver                        0x0000000102e4459e chromedriver + 673182
+11  chromedriver                        0x000000010342a020 chromedriver + 6856736
+12  chromedriver                        0x000000010342e050 chromedriver + 6873168
+13  chromedriver                        0x000000010340c3d7 chromedriver + 6734807
+14  chromedriver                        0x000000010342e9ee chromedriver + 6875630
+15  chromedriver                        0x00000001033fbc14 chromedriver + 6667284
+16  chromedriver                        0x000000010344b778 chromedriver + 6993784
+17  chromedriver                        0x000000010344b936 chromedriver + 6994230
+18  chromedriver                        0x000000010345cd18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 14:00:16,813 - ERROR - 登录过程中出现错误: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x0000000103465268 chromedriver + 7098984
+1   chromedriver                        0x000000010345d13a chromedriver + 7065914
+2   chromedriver                        0x0000000102e01d70 chromedriver + 400752
+3   chromedriver                        0x0000000102e07d1e chromedriver + 425246
+4   chromedriver                        0x0000000102e0a54e chromedriver + 435534
+5   chromedriver                        0x0000000102e95238 chromedriver + 1004088
+6   chromedriver                        0x0000000102e75212 chromedriver + 872978
+7   chromedriver                        0x0000000102e9415e chromedriver + 999774
+8   chromedriver                        0x0000000102e74fb3 chromedriver + 872371
+9   chromedriver                        0x0000000102e435c2 chromedriver + 669122
+10  chromedriver                        0x0000000102e4459e chromedriver + 673182
+11  chromedriver                        0x000000010342a020 chromedriver + 6856736
+12  chromedriver                        0x000000010342e050 chromedriver + 6873168
+13  chromedriver                        0x000000010340c3d7 chromedriver + 6734807
+14  chromedriver                        0x000000010342e9ee chromedriver + 6875630
+15  chromedriver                        0x00000001033fbc14 chromedriver + 6667284
+16  chromedriver                        0x000000010344b778 chromedriver + 6993784
+17  chromedriver                        0x000000010344b936 chromedriver + 6994230
+18  chromedriver                        0x000000010345cd18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 14:00:53,371 - INFO - ====== WebDriver manager ======
+2024-12-29 14:00:53,585 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:00:53,774 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:00:53,984 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 14:00:56,505 - INFO - 浏览器驱动初始化成功
+2024-12-29 14:00:57,503 - INFO - 成功打开知乎登录页面
+2024-12-29 14:01:00,518 - INFO - 已输入账号密码
+2024-12-29 14:01:01,528 - INFO - 已点击登录按钮
+2024-12-29 14:01:03,543 - WARNING - 检测到验证码，请在30秒内手动完成验证
+2024-12-29 14:01:09,664 - INFO - 请在30秒内完成验证...
+2024-12-29 14:01:21,943 - ERROR - 登录过程中出现错误: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x000000010ddcd268 chromedriver + 7098984
+1   chromedriver                        0x000000010ddc513a chromedriver + 7065914
+2   chromedriver                        0x000000010d769d70 chromedriver + 400752
+3   chromedriver                        0x000000010d73f89f chromedriver + 227487
+4   chromedriver                        0x000000010d7e548d chromedriver + 906381
+5   chromedriver                        0x000000010d7fbb35 chromedriver + 998197
+6   chromedriver                        0x000000010d7dcfb3 chromedriver + 872371
+7   chromedriver                        0x000000010d7ab5c2 chromedriver + 669122
+8   chromedriver                        0x000000010d7ac59e chromedriver + 673182
+9   chromedriver                        0x000000010dd92020 chromedriver + 6856736
+10  chromedriver                        0x000000010dd96050 chromedriver + 6873168
+11  chromedriver                        0x000000010dd743d7 chromedriver + 6734807
+12  chromedriver                        0x000000010dd969ee chromedriver + 6875630
+13  chromedriver                        0x000000010dd63c14 chromedriver + 6667284
+14  chromedriver                        0x000000010ddb3778 chromedriver + 6993784
+15  chromedriver                        0x000000010ddb3936 chromedriver + 6994230
+16  chromedriver                        0x000000010ddc4d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 14:02:08,705 - INFO - ====== WebDriver manager ======
+2024-12-29 14:02:08,903 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:02:09,423 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:02:10,235 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 14:02:11,968 - INFO - 浏览器驱动初始化成功
+2024-12-29 14:02:12,132 - INFO - 成功打开知乎登录页面
+2024-12-29 14:02:15,161 - ERROR - 未找到输入框
+2024-12-29 14:02:57,078 - INFO - ====== WebDriver manager ======
+2024-12-29 14:02:57,278 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:02:57,488 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:02:58,035 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 14:03:00,228 - INFO - 浏览器驱动初始化成功
+2024-12-29 14:03:01,373 - INFO - 成功打开知乎登录页面
+2024-12-29 14:03:04,386 - ERROR - 未找到输入框
+2024-12-29 14:03:50,065 - INFO - ====== WebDriver manager ======
+2024-12-29 14:03:50,265 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:03:51,081 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:03:51,654 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 14:03:53,553 - INFO - 浏览器驱动初始化成功
+2024-12-29 14:03:54,688 - INFO - 成功打开知乎登录页面
+2024-12-29 14:03:59,719 - INFO - 当前页面内容: <html lang="zh" data-hairline="true" class="itcauecng" data-theme="light" data-rh="data-theme"><head><style class="ariareader ariareader--user-agent" media="screen" id="ariak5p31ulubdo" data-for="result" isaria="true">.ariafocus{outline:none;}body.useOldFixed [aria-fixedOldHidden=true],.ariaHide{display:none !important;}:focus{outline:none !important;}</style><meta charset="utf-8"><title>知乎 - 有问题，就会有答案</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><met
+2024-12-29 14:03:59,728 - INFO - 浏览器日志: {'level': 'SEVERE', 'message': 'https://static.zhihu.com/heifetz/chunks/zswsdid.993bf3e63383befd3ad6.js 0:36233 Uncaught TypeError: x[H(...)][H(...)] is not a function', 'source': 'javascript', 'timestamp': 1735452234875}
+2024-12-29 14:03:59,728 - ERROR - 未找到输入框
+2024-12-29 14:05:19,693 - INFO - ====== WebDriver manager ======
+2024-12-29 14:05:19,902 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:05:20,700 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 14:05:21,257 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 14:05:23,265 - INFO - 浏览器驱动初始化成功
+2024-12-29 14:05:24,586 - INFO - 成功打开知乎登录页面
+2024-12-29 14:05:24,630 - INFO - 当前页面内容: <html lang="zh" data-hairline="true" class="itcauecng" data-theme="light" data-rh="data-theme"><head><style class="ariareader ariareader--user-agent" media="screen" id="ariad2316hl8dqo" data-for="result" isaria="true">.ariafocus{outline:none;}body.useOldFixed [aria-fixedOldHidden=true],.ariaHide{display:none !important;}:focus{outline:none !important;}</style><meta charset="utf-8"><title>知乎 - 有问题，就会有答案</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><met
+2024-12-29 14:05:52,926 - INFO - 已输入账号密码
+2024-12-29 14:05:53,939 - INFO - 已点击登录按钮
+2024-12-29 14:05:55,950 - WARNING - 检测到验证码，请在30秒内手动完成验证
+2024-12-29 14:06:03,082 - INFO - 请在30秒内完成验证...
+2024-12-29 14:06:38,677 - INFO - 请在20秒内完成验证...
+2024-12-29 14:07:04,193 - INFO - 验证码验证成功，登录成功！
