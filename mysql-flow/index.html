@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL查询执行流程动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .flow-container {
+            position: relative;
+            margin: 40px 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .step {
+            background: #e6f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            width: 180px;
+            text-align: center;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .step.active {
+            opacity: 1;
+            background: #1890ff;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .step::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #1890ff;
+            font-size: 24px;
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+        .description {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+            min-height: 100px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #1890ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #40a9ff;
+        }
+
+        button:disabled {
+            background: #d9d9d9;
+            cursor: not-allowed;
+        }
+
+        .sql-input {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MySQL查询执行流程</h1>
+        <input type="text" class="sql-input" value="SELECT * FROM users WHERE age > 18;" readonly>
+        
+        <div class="flow-container">
+            <div class="step" data-step="1">查询缓存</div>
+            <div class="step" data-step="2">SQL解析</div>
+            <div class="step" data-step="3">查询优化</div>
+            <div class="step" data-step="4">执行计划</div>
+            <div class="step" data-step="5">返回结果</div>
+        </div>
+
+        <div class="description">
+            点击"开始"按钮查看MySQL执行SQL语句的详细流程
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn" disabled>上一步</button>
+            <button id="startBtn">开始</button>
+            <button id="nextBtn" disabled>下一步</button>
+        </div>
+    </div>
+
+    <script>
+        const steps = document.querySelectorAll('.step');
+        const description = document.querySelector('.description');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const startBtn = document.getElementById('startBtn');
+
+        let currentStep = 0;
+        const descriptions = [
+            '开始执行SQL查询流程',
+            '第1步：查询缓存\n检查是否有完全相同的查询缓存，如果有则直接返回结果。但在MySQL 8.0后已移除查询缓存功能。',
+            '第2步：SQL解析\n将SQL语句进行词法分析、语法分析，转换成MySQL能理解的数据结构（解析树）。',
+            '第3步：查询优化\n优化器会对解析树进行优化，选择最佳的执行方案，如选择合适的索引等。',
+            '第4步：执行计划\n根据优化后的执行计划，调用存储引擎的API进行查询操作。',
+            '第5步：返回结果\n将查询结果返回给客户端，如果有需要还会进行排序、分组等操作。'
+        ];
+
+        function updateUI() {
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === currentStep);
+            });
+            description.textContent = descriptions[currentStep];
+            prevBtn.disabled = currentStep === 0;
+            nextBtn.disabled = currentStep === steps.length;
+            startBtn.textContent = currentStep === 0 ? '开始' : '重新开始';
+        }
+
+        startBtn.addEventListener('click', () => {
+            currentStep = 1;
+            updateUI();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                updateUI();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < steps.length) {
+                currentStep++;
+                updateUI();
+            }
+        });
+
+        steps.forEach((step, index) => {
+            step.addEventListener('click', () => {
+                currentStep = index + 1;
+                updateUI();
+            });
+        });
+
+        updateUI();
+    </script>
+</body>
+</html> 

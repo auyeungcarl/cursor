@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Rules 编辑指南 - 演示版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            padding: 40px;
+            opacity: 0;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #1890ff;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #1890ff;
+            margin-bottom: 20px;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            font-family: monospace;
+            margin: 20px 0;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #1890ff;
+        }
+
+        .comment {
+            color: #6a9955;
+        }
+
+        .list-item {
+            font-size: 1.5em;
+            margin: 15px 0;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+            text-align: left;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .list-item::before {
+            content: '•';
+            color: #1890ff;
+            position: absolute;
+            left: 0;
+        }
+
+        .list-item.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #1890ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1.2em;
+        }
+
+        button:hover {
+            background: #40a9ff;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            background: #1890ff;
+            transition: width 0.3s ease;
+        }
+
+        .slide-number {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.8em; }
+            .list-item { font-size: 1.2em; }
+            .code-block { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 封面页 -->
+    <div class="slide active">
+        <div class="slide-content">
+            <h1>Cursor Rules 编辑指南</h1>
+            <p style="font-size: 1.5em; margin-top: 20px;">高效编写和管理 Cursor Rules</p>
+        </div>
+    </div>
+
+    <!-- Role 定义 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Role 定义</h2>
+            <div class="code-block">
+                <span class="comment"># Role 定义</span><br>
+                <span class="highlight">Role:</span><br>
+                你是一名专业的AI助手，专注于帮助用户解决编程问题。
+            </div>
+            <div class="list-item">明确定义AI助手的角色</div>
+            <div class="list-item">设定专业领域和范围</div>
+            <div class="list-item">确定交互风格和语气</div>
+        </div>
+    </div>
+
+    <!-- Goal 设置 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Goal 设置</h2>
+            <div class="code-block">
+                <span class="comment"># Goal 设置</span><br>
+                <span class="highlight">Goal:</span><br>
+                帮助用户高效完成编程任务，提供清晰的解决方案。
+            </div>
+            <div class="list-item">设定具体、可衡量的目标</div>
+            <div class="list-item">确保目标与用户需求相关</div>
+            <div class="list-item">包含可验证的成功标准</div>
+        </div>
+    </div>
+
+    <!-- 工作流程 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>工作流程定义</h2>
+            <div class="code-block">
+                <span class="comment"># 工作流程</span><br>
+                <span class="highlight">Workflow:</span><br>
+                1. 理解用户需求<br>
+                2. 分析现有代码<br>
+                3. 提供解决方案<br>
+                4. 验证结果
+            </div>
+            <div class="list-item">清晰的步骤划分</div>
+            <div class="list-item">逻辑顺序安排</div>
+            <div class="list-item">包含验证环节</div>
+        </div>
+    </div>
+
+    <!-- 编码规范 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>编码规范</h2>
+            <div class="code-block">
+                <span class="comment"># 编码规范</span><br>
+                <span class="highlight">Coding Standards:</span><br>
+                - 使用清晰的命名<br>
+                - 添加必要注释<br>
+                - 遵循最佳实践
+            </div>
+            <div class="list-item">统一的编码风格</div>
+            <div class="list-item">完善的文档注释</div>
+            <div class="list-item">代码质量保证</div>
+        </div>
+    </div>
+
+    <!-- 最佳实践 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>最佳实践</h2>
+            <div class="list-item">1. 使用清晰的层次结构组织规则</div>
+            <div class="list-item">2. 为每个规则添加详细说明</div>
+            <div class="list-item">3. 使用具体示例说明</div>
+            <div class="list-item">4. 定期更新优化</div>
+            <div class="list-item">5. 保持规则一致性</div>
+        </div>
+    </div>
+
+    <!-- 总结页 -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>总结</h2>
+            <div class="list-item">清晰的规则结构是基础</div>
+            <div class="list-item">具体的目标指导方向</div>
+            <div class="list-item">完善的工作流程保证效率</div>
+            <div class="list-item">持续的优化确保质量</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn">上一页</button>
+        <button id="nextBtn">下一页</button>
+    </div>
+
+    <div class="progress-bar"></div>
+    <div class="slide-number"></div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.querySelector('.progress-bar');
+        const slideNumber = document.querySelector('.slide-number');
+        
+        let currentSlide = 0;
+        
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    
+                    // Animate list items
+                    const listItems = slide.querySelectorAll('.list-item');
+                    listItems.forEach((item, i) => {
+                        setTimeout(() => {
+                            item.classList.add('active');
+                        }, i * 200);
+                    });
+                }
+            });
+            
+            // Update progress bar
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            // Update slide number
+            slideNumber.textContent = `${currentSlide + 1} / ${slides.length}`;
+            
+            // Update buttons
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlides();
+            }
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlides();
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+        });
+        
+        // Initial update
+        updateSlides();
+    </script>
+</body>
+</html> 

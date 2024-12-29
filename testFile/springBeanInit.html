@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Bean 生命周期可视化</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f0f2f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .lifecycle-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .phase {
+            padding: 15px;
+            border: 1px solid #e8e8e8;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #fff;
+        }
+        .phase:hover {
+            background: #f6f6f6;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .phase.active {
+            border-color: #1890ff;
+            background: #e6f7ff;
+        }
+        .phase-title {
+            font-weight: bold;
+            color: #1890ff;
+            margin-bottom: 10px;
+        }
+        .phase-content {
+            display: none;
+            margin-top: 10px;
+            color: #666;
+        }
+        .phase.active .phase-content {
+            display: block;
+        }
+        .code-example {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-top: 10px;
+        }
+        .arrow {
+            text-align: center;
+            color: #1890ff;
+            font-size: 20px;
+            margin: 5px 0;
+        }
+        .circular-dependency {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fffbe6;
+            border: 1px solid #ffe58f;
+            border-radius: 4px;
+        }
+        .cache-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            gap: 20px;
+        }
+        .cache-box {
+            flex: 1;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+        }
+        .cache-title {
+            font-weight: bold;
+            color: #722ed1;
+            margin-bottom: 10px;
+        }
+        .diagram {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .diagram img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* 添加动画相关样式 */
+        .animation-container {
+            margin: 30px 0;
+            position: relative;
+            height: 300px;
+            border: 1px solid #e8e8e8;
+            border-radius: 4px;
+            background: #fff;
+            overflow: hidden;
+        }
+        .bean {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: white;
+            transition: all 0.5s ease;
+        }
+        .bean-a {
+            background: #1890ff;
+            left: 20%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .bean-b {
+            background: #722ed1;
+            right: 20%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .cache-level {
+            position: absolute;
+            width: 150px;
+            height: 60px;
+            border: 2px dashed #d9d9d9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .cache-1 {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .cache-2 {
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .cache-3 {
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .arrow-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 2px;
+            background: #1890ff;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .arrow-line::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #1890ff;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+        .control-panel {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .control-btn {
+            padding: 8px 16px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            background: #1890ff;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .control-btn:hover {
+            background: #40a9ff;
+        }
+        .step-description {
+            text-align: center;
+            margin: 10px 0;
+            min-height: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spring Bean 生命周期可视化</h1>
+        
+        <div class="circular-dependency">
+            <h2>循环依赖处理机制</h2>
+            <p>Spring通过三级缓存机制解决循环依赖问题：</p>
+            
+            <div class="cache-container">
+                <div class="cache-box">
+                    <div class="cache-title">一级缓存 (singletonObjects)</div>
+                    <p>存储完全初始化好的Bean实例</p>
+                    <div class="code-example">
+                        Map<String, Object> singletonObjects = new ConcurrentHashMap<>();
+                    </div>
+                </div>
+                
+                <div class="cache-box">
+                    <div class="cache-title">二级缓存 (earlySingletonObjects)</div>
+                    <p>存储早期的Bean实例（尚未完全初始化）</p>
+                    <div class="code-example">
+                        Map<String, Object> earlySingletonObjects = new HashMap<>();
+                    </div>
+                </div>
+                
+                <div class="cache-box">
+                    <div class="cache-title">三级缓存 (singletonFactories)</div>
+                    <p>存储Bean的工厂对象，用于创建早期Bean实例</p>
+                    <div class="code-example">
+                        Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>();
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase" onclick="togglePhase(this)">
+                <div class="phase-title">循环依赖解决流程</div>
+                <div class="phase-content">
+                    <ol>
+                        <li>创建Bean A时，实例化后放入三级缓存</li>
+                        <li>填充属性时发现依赖Bean B</li>
+                        <li>转而创建Bean B</li>
+                        <li>Bean B填充属性时发现依赖Bean A</li>
+                        <li>从三级缓存中获取Bean A的早期引用</li>
+                        <li>完成Bean B的创建并放入一级缓存</li>
+                        <li>继续完成Bean A的创建</li>
+                    </ol>
+                    <div class="code-example">
+                        @Component
+                        public class A {
+                            @Autowired
+                            private B b;
+                        }
+
+                        @Component
+                        public class B {
+                            @Autowired
+                            private A a;
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase" onclick="togglePhase(this)">
+                <div class="phase-title">循环依赖实际案例</div>
+                <div class="phase-content">
+                    <h3>用户和订单服务循环依赖示例</h3>
+                    <div class="code-example" style="font-size: 14px; line-height: 1.5;">
+<pre style="margin: 0;">
+<span style="color: #888;">/**
+ * 用户服务类
+ * 负责用户信息管理，包括获取用户订单信息
+ */</span>
+@Service
+@Slf4j
+public class UserService {
+    
+    @Autowired
+    private OrderService orderService;
+    
+    <span style="color: #888;">/**
+     * 获取用户详细信息，包括订单
+     * @param id 用户ID
+     * @return 包含订单信息的用户对象
+     */</span>
+    public User getUserById(Long id) {
+        log.info("Getting user details for id: {}", id);
+        
+        <span style="color: #888;">// 1. 获取用户基本信息</span>
+        User user = findUserById(id);
+        if (user == null) {
+            throw new UserNotFoundException("User not found with id: " + id);
+        }
+        
+        <span style="color: #888;">// 2. 获取用户的订单信息</span>
+        List&lt;Order&gt; orders = orderService.getOrdersByUserId(id);
+        user.setOrders(orders);
+        
+        log.debug("Found {} orders for user {}", orders.size(), id);
+        return user;
+    }
+    
+    <span style="color: #888;">/**
+     * 获取用户基本信息（供OrderService调用）
+     * @param id 用户ID
+     * @return 用户基本信息
+     */</span>
+    public User getUserBasicInfo(Long id) {
+        log.info("Getting user basic info for id: {}", id);
+        return findUserById(id);
+    }
+}
+
+<span style="color: #888;">/**
+ * 订单服务类
+ * 负责订单管理，包括获取订单关联的用户信息
+ */</span>
+@Service
+@Slf4j
+public class OrderService {
+    
+    @Autowired
+    private UserService userService;
+    
+    <span style="color: #888;">/**
+     * 获取用户的所有订单
+     * @param userId 用户ID
+     * @return 订单列表
+     */</span>
+    public List&lt;Order&gt; getOrdersByUserId(Long userId) {
+        log.info("Fetching orders for user: {}", userId);
+        
+        <span style="color: #888;">// 1. 获取订单列表</span>
+        List&lt;Order&gt; orders = findOrdersByUserId(userId);
+        
+        <span style="color: #888;">// 2. 为每个订单填充用户信息</span>
+        orders.forEach(order -> {
+            User user = userService.getUserBasicInfo(userId);
+            order.setUser(user);
+        });
+        
+        log.debug("Found {} orders for user {}", orders.size(), userId);
+        return orders;
+    }
+    
+    <span style="color: #888;">/**
+     * 创建新订单
+     * @param order 订单信息
+     * @return 创建的订单
+     */</span>
+    public Order createOrder(Order order) {
+        log.info("Creating new order for user: {}", order.getUserId());
+        
+        <span style="color: #888;">// 验证用户是否存在</span>
+        User user = userService.getUserBasicInfo(order.getUserId());
+        if (user == null) {
+            throw new UserNotFoundException("Cannot create order for non-existent user");
+        }
+        
+        return saveOrder(order);
+    }
+}
+
+<span style="color: #888;">/**
+ * 用户实体类
+ */</span>
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User {
+    private Long id;
+    private String username;
+    private String email;
+    private List&lt;Order&gt; orders;
+}
+
+<span style="color: #888;">/**
+ * 订单实体类
+ */</span>
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Order {
+    private Long id;
+    private Long userId;
+    private BigDecimal amount;
+    private LocalDateTime orderTime;
+    private User user;
+}</pre>
+                    </div>
+                    <p>在这个例子中：</p>
+                    <ul>
+                        <li>UserService需要OrderService来获取用户的订单信息</li>
+                        <li>OrderService需要UserService来获取订单关联的用户信息</li>
+                        <li>这形成了典型的循环依赖场景</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="animation-container">
+                <div class="cache-level cache-1">一级缓存 (完整Bean)</div>
+                <div class="cache-level cache-2">二级缓存 (早期Bean)</div>
+                <div class="cache-level cache-3">三级缓存 (Bean工厂)</div>
+                <div class="bean bean-a">User</div>
+                <div class="bean bean-b">Order</div>
+                <div class="arrow-line"></div>
+            </div>
+
+            <div class="step-description">
+                点击"开始动画"查看循环依赖解决过程
+            </div>
+
+            <div class="control-panel">
+                <button class="control-btn" onclick="startAnimation()">开始动画</button>
+                <button class="control-btn" onclick="resetAnimation()">重置</button>
+                <button class="control-btn" onclick="toggleAutoPlay()">自动播放</button>
+            </div>
+        </div>
+
+        <h2>Bean 生命周期阶段</h2>
+        <p>点击每个阶段查看详细信息</p>
+        
+        <div class="lifecycle-container">
+            <div class="phase" onclick="togglePhase(this)">
+                <div class="phase-title">1. 实例化 (Instantiation)</div>
+                <div class="phase-content">
+                    Spring容器通过构造方法创建Bean实例
+                    <div class="code-example">
+                        // 通过构造方法创建实例
+                        MyBean myBean = new MyBean();
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            
+            <div class="phase" onclick="togglePhase(this)">
+                <div class="phase-title">2. 属性赋值 (Population)</div>
+                <div class="phase-content">
+                    Spring将配置的属性值注入到Bean实例中
+                    <div class="code-example">
+                        @Autowired
+                        private DependencyBean dependencyBean;
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            
+            <div class="phase" onclick="togglePhase(this)">
+                <div class="phase-title">3. 初始化前 (BeanPostProcessor - before)</div>
+                <div class="phase-content">
+                    执行BeanPostProcessor的postProcessBeforeInitialization方法
+                    <div class="code-example">
+                        public Object postProcessBeforeInitialization(Object bean, String beanName) {
+                            // 初始化前的处理
+                            return bean;
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            
+            <div class="phase" onclick="togglePhase(this)">
+                <div class="phase-title">4. 初始化 (Initialization)</div>
+                <div class="phase-content">
+                    执行初始化方法，包括@PostConstruct注解的方法
+                    <div class="code-example">
+                        @PostConstruct
+                        public void init() {
+                            // 初始化逻辑
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            
+            <div class="phase" onclick="togglePhase(this)">
+                <div class="phase-title">5. 初始化后 (BeanPostProcessor - after)</div>
+                <div class="phase-content">
+                    执行BeanPostProcessor的postProcessAfterInitialization方法
+                    <div class="code-example">
+                        public Object postProcessAfterInitialization(Object bean, String beanName) {
+                            // 初始化后的处理
+                            return bean;
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            
+            <div class="phase" onclick="togglePhase(this)">
+                <div class="phase-title">6. Bean就绪</div>
+                <div class="phase-content">
+                    Bean完成初始化，可以使用
+                    <div class="code-example">
+                        // Bean可以被注入使用
+                        @Autowired
+                        private MyBean myBean;
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">↓</div>
+            
+            <div class="phase" onclick="togglePhase(this)">
+                <div class="phase-title">7. 销毁 (Destruction)</div>
+                <div class="phase-content">
+                    容器关闭时，执行销毁方法
+                    <div class="code-example">
+                        @PreDestroy
+                        public void destroy() {
+                            // 清理资源
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePhase(element) {
+            // 移除其他阶段的active类
+            document.querySelectorAll('.phase').forEach(phase => {
+                if (phase !== element) {
+                    phase.classList.remove('active');
+                }
+            });
+            
+            // 切换当前阶段的active类
+            element.classList.toggle('active');
+        }
+
+        let currentStep = 0;
+        let autoPlayInterval = null;
+        
+        const steps = [
+            {
+                description: "1. 创建UserService实例，完成实例化",
+                animation: () => {
+                    const beanA = document.querySelector('.bean-a');
+                    beanA.style.transform = 'translateY(-50%) scale(1.1)';
+                    setTimeout(() => {
+                        beanA.style.transform = 'translateY(-50%) scale(1)';
+                        beanA.style.top = '180px';
+                    }, 500);
+                }
+            },
+            {
+                description: "2. UserService实例放入三级缓存（Bean工厂）",
+                animation: () => {
+                    const beanA = document.querySelector('.bean-a');
+                    beanA.style.backgroundColor = '#91d5ff';
+                }
+            },
+            {
+                description: "3. 开始注入UserService的依赖，发现需要OrderService",
+                animation: () => {
+                    document.querySelector('.arrow-line').style.opacity = '1';
+                    document.querySelector('.arrow-line').style.backgroundColor = '#722ed1';
+                }
+            },
+            {
+                description: "4. 创建OrderService实例",
+                animation: () => {
+                    const beanB = document.querySelector('.bean-b');
+                    beanB.style.transform = 'translateY(-50%) scale(1.1)';
+                    setTimeout(() => {
+                        beanB.style.transform = 'translateY(-50%) scale(1)';
+                        beanB.style.top = '180px';
+                    }, 500);
+                }
+            },
+            {
+                description: "5. OrderService注入时发现需要UserService",
+                animation: () => {
+                    const arrowLine = document.querySelector('.arrow-line');
+                    arrowLine.style.backgroundColor = '#1890ff';
+                }
+            },
+            {
+                description: "6. 从三级缓存获取UserService的早期引用",
+                animation: () => {
+                    const beanA = document.querySelector('.bean-a');
+                    beanA.style.top = '100px';
+                    beanA.style.backgroundColor = '#69c0ff';
+                }
+            },
+            {
+                description: "7. 完成OrderService初始化，放入一级缓存",
+                animation: () => {
+                    const beanB = document.querySelector('.bean-b');
+                    beanB.style.top = '20px';
+                    beanB.style.backgroundColor = '#722ed1';
+                }
+            },
+            {
+                description: "8. 完成UserService的初始化，放入一级缓存",
+                animation: () => {
+                    const beanA = document.querySelector('.bean-a');
+                    beanA.style.top = '20px';
+                    beanA.style.backgroundColor = '#1890ff';
+                    document.querySelector('.arrow-line').style.opacity = '0';
+                }
+            }
+        ];
+
+        function startAnimation() {
+            if (currentStep >= steps.length) {
+                resetAnimation();
+                return;
+            }
+
+            const step = steps[currentStep];
+            document.querySelector('.step-description').textContent = step.description;
+            step.animation();
+            currentStep++;
+
+            if (currentStep < steps.length) {
+                setTimeout(startAnimation, 2500);
+            }
+        }
+
+        function resetAnimation() {
+            currentStep = 0;
+            const beanA = document.querySelector('.bean-a');
+            const beanB = document.querySelector('.bean-b');
+            
+            beanA.style.top = '50%';
+            beanA.style.backgroundColor = '#1890ff';
+            beanA.style.transform = 'translateY(-50%)';
+            
+            beanB.style.top = '50%';
+            beanB.style.backgroundColor = '#722ed1';
+            beanB.style.transform = 'translateY(-50%)';
+            
+            document.querySelector('.arrow-line').style.opacity = '0';
+            document.querySelector('.step-description').textContent = '点击"开始动画"查看循环依赖解决过程';
+        }
+
+        function toggleAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            } else {
+                resetAnimation();
+                autoPlayInterval = setInterval(() => {
+                    startAnimation();
+                    if (currentStep >= steps.length) {
+                        setTimeout(resetAnimation, 1000);
+                    }
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html> 

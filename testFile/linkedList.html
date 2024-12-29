@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>链表可视化</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            flex: 1;
+            min-width: 100px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .visualization {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 100px;
+            position: relative;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .node {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 40px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .node-content {
+            width: 40px;
+            height: 40px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .node-content:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .node-arrow {
+            position: absolute;
+            right: -30px;
+            content: "→";
+            color: #666;
+            font-size: 20px;
+        }
+        .operations {
+            margin-top: 20px;
+        }
+        .operation-log {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+            animation: fadeIn 0.5s ease;
+        }
+        .highlight {
+            animation: highlight 1s ease-in-out;
+        }
+        .init-controls {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+        .stat-item {
+            flex: 1;
+            text-align: center;
+        }
+        @keyframes highlight {
+            0% { transform: scale(1); background-color: #4CAF50; }
+            50% { transform: scale(1.2); background-color: #ff9800; }
+            100% { transform: scale(1); background-color: #4CAF50; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .error {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .success {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>链表操作可视化</h1>
+        
+        <div class="init-controls">
+            <h3>初始化链表</h3>
+            <div class="input-group">
+                <input type="text" id="initValues" placeholder="输入初始值（用逗号分隔，如：1,2,3）">
+                <button onclick="initializeList()" class="init-btn">初始化链表</button>
+                <button onclick="clearList()" class="clear-btn" style="background-color: #dc3545;">清空链表</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="input-group">
+                <input type="number" id="valueInput" placeholder="输入值">
+                <input type="number" id="positionInput" placeholder="位置">
+                <button onclick="insertNode()">插入节点</button>
+            </div>
+            <div class="input-group">
+                <input type="number" id="deletePosition" placeholder="位置">
+                <button onclick="deleteNode()">删除节点</button>
+            </div>
+            <div class="input-group">
+                <input type="number" id="searchValue" placeholder="搜索值">
+                <button onclick="searchNode()">搜索节点</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <strong>节点数量：</strong>
+                <span id="nodeCount">0</span>
+            </div>
+            <div class="stat-item">
+                <strong>最新操作：</strong>
+                <span id="lastOperation">无</span>
+            </div>
+        </div>
+
+        <div class="visualization" id="linkedListViz"></div>
+
+        <div class="operations">
+            <h2>操作日志</h2>
+            <div class="operation-log" id="operationLog"></div>
+        </div>
+    </div>
+
+    <script>
+        class Node {
+            constructor(value) {
+                this.value = value;
+                this.next = null;
+            }
+        }
+
+        class LinkedList {
+            constructor() {
+                this.head = null;
+                this.size = 0;
+            }
+
+            insert(value, position) {
+                if (position < 0 || position > this.size) {
+                    return false;
+                }
+
+                const newNode = new Node(value);
+
+                if (position === 0) {
+                    newNode.next = this.head;
+                    this.head = newNode;
+                } else {
+                    let current = this.head;
+                    let index = 0;
+                    let previous = null;
+
+                    while (index < position) {
+                        previous = current;
+                        current = current.next;
+                        index++;
+                    }
+
+                    newNode.next = current;
+                    previous.next = newNode;
+                }
+
+                this.size++;
+                return true;
+            }
+
+            delete(position) {
+                if (position < 0 || position >= this.size) {
+                    return null;
+                }
+
+                let current = this.head;
+
+                if (position === 0) {
+                    this.head = current.next;
+                } else {
+                    let previous = null;
+                    let index = 0;
+
+                    while (index < position) {
+                        previous = current;
+                        current = current.next;
+                        index++;
+                    }
+
+                    previous.next = current.next;
+                }
+
+                this.size--;
+                return current.value;
+            }
+
+            search(value) {
+                let current = this.head;
+                let position = 0;
+
+                while (current !== null) {
+                    if (current.value === value) {
+                        return position;
+                    }
+                    current = current.next;
+                    position++;
+                }
+
+                return -1;
+            }
+
+            toArray() {
+                const result = [];
+                let current = this.head;
+
+                while (current !== null) {
+                    result.push(current.value);
+                    current = current.next;
+                }
+
+                return result;
+            }
+        }
+
+        const linkedList = new LinkedList();
+        
+        function initializeList() {
+            const input = document.getElementById('initValues').value;
+            const values = input.split(',').map(v => parseInt(v.trim())).filter(v => !isNaN(v));
+            
+            if (values.length === 0) {
+                addLog('错误：请输入有效的数值（用逗号分隔）', 'error');
+                return;
+            }
+
+            linkedList.head = null;
+            linkedList.size = 0;
+            
+            values.forEach((value, index) => {
+                linkedList.insert(value, index);
+            });
+            
+            updateVisualization();
+            updateStats('初始化');
+            addLog(`成功初始化链表：${values.join(' → ')}`, 'success');
+        }
+
+        function clearList() {
+            linkedList.head = null;
+            linkedList.size = 0;
+            updateVisualization();
+            updateStats('清空');
+            addLog('链表已清空', 'success');
+        }
+
+        function updateStats(operation) {
+            document.getElementById('nodeCount').textContent = linkedList.size;
+            document.getElementById('lastOperation').textContent = operation;
+        }
+
+        function updateVisualization() {
+            const viz = document.getElementById('linkedListViz');
+            viz.innerHTML = '';
+            
+            if (linkedList.size === 0) {
+                viz.innerHTML = '<div style="text-align: center; color: #666;">空链表</div>';
+                return;
+            }
+            
+            let current = linkedList.head;
+            while (current !== null) {
+                const nodeDiv = document.createElement('div');
+                nodeDiv.className = 'node';
+                
+                const nodeContent = document.createElement('div');
+                nodeContent.className = 'node-content';
+                nodeContent.textContent = current.value;
+                
+                // 添加索引标签
+                const indexLabel = document.createElement('div');
+                indexLabel.style.position = 'absolute';
+                indexLabel.style.top = '-20px';
+                indexLabel.style.width = '100%';
+                indexLabel.style.textAlign = 'center';
+                indexLabel.style.fontSize = '12px';
+                indexLabel.style.color = '#666';
+                indexLabel.textContent = Array.from(viz.children).length;
+                nodeContent.appendChild(indexLabel);
+                
+                nodeDiv.appendChild(nodeContent);
+                
+                if (current.next !== null) {
+                    const arrow = document.createElement('div');
+                    arrow.className = 'node-arrow';
+                    arrow.textContent = '→';
+                    nodeDiv.appendChild(arrow);
+                }
+                
+                viz.appendChild(nodeDiv);
+                current = current.next;
+            }
+        }
+
+        function addLog(message, type = '') {
+            const log = document.getElementById('operationLog');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `${new Date().toLocaleTimeString()} - ${message}`;
+            log.insertBefore(entry, log.firstChild);
+        }
+
+        function insertNode() {
+            const value = parseInt(document.getElementById('valueInput').value);
+            const position = parseInt(document.getElementById('positionInput').value);
+
+            if (isNaN(value) || isNaN(position)) {
+                addLog('错误：请输入有效的值和位置', 'error');
+                return;
+            }
+
+            if (linkedList.insert(value, position)) {
+                addLog(`成功在位置 ${position} 插入值 ${value}`, 'success');
+                updateVisualization();
+                updateStats('插入');
+            } else {
+                addLog(`错误：无法在位置 ${position} 插入值 ${value}`, 'error');
+            }
+        }
+
+        function deleteNode() {
+            const position = parseInt(document.getElementById('deletePosition').value);
+
+            if (isNaN(position)) {
+                addLog('错误：请输入有效的位置', 'error');
+                return;
+            }
+
+            const deletedValue = linkedList.delete(position);
+            if (deletedValue !== null) {
+                addLog(`成功删除位置 ${position} 的值 ${deletedValue}`, 'success');
+                updateVisualization();
+                updateStats('删除');
+            } else {
+                addLog(`错误：无法删除位置 ${position} 的节点`, 'error');
+            }
+        }
+
+        function searchNode() {
+            const value = parseInt(document.getElementById('searchValue').value);
+
+            if (isNaN(value)) {
+                addLog('错误：请输入有效的搜索值', 'error');
+                return;
+            }
+
+            const position = linkedList.search(value);
+            if (position !== -1) {
+                addLog(`找到值 ${value} 在位置 ${position}`, 'success');
+                
+                const nodes = document.querySelectorAll('.node-content');
+                nodes[position].classList.add('highlight');
+                setTimeout(() => {
+                    nodes[position].classList.remove('highlight');
+                }, 1000);
+                updateStats('搜索');
+            } else {
+                addLog(`未找到值 ${value}`, 'error');
+            }
+        }
+
+        // 初始化页面
+        updateVisualization();
+        updateStats('初始化');
+    </script>
+</body>
+</html> 

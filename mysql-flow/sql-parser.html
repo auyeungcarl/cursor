@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL解析过程动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sql-input {
+            width: 100%;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 16px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+
+        .parsing-container {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .parsing-step {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e8e8e8;
+        }
+
+        .parsing-step h3 {
+            color: #1890ff;
+            margin-bottom: 15px;
+        }
+
+        .token-list, .syntax-tree, .semantic-analysis {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            min-height: 200px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .token {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background: #e6f7ff;
+            border-radius: 4px;
+            font-family: monospace;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .token.active {
+            opacity: 1;
+            transform: scale(1);
+            background: #1890ff;
+            color: white;
+        }
+
+        .tree-node {
+            margin: 10px 0;
+            padding-left: 20px;
+            border-left: 2px solid #1890ff;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .tree-node.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .semantic-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #e6f7ff;
+            border-radius: 4px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .semantic-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #1890ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #40a9ff;
+        }
+
+        button:disabled {
+            background: #d9d9d9;
+            cursor: not-allowed;
+        }
+
+        .active-container {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #1890ff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回主流程</a>
+        <h1>SQL解析详细过程</h1>
+        
+        <input type="text" class="sql-input" value="SELECT username, age FROM users WHERE age > 18 ORDER BY age DESC;" readonly>
+        
+        <div class="parsing-container">
+            <div class="parsing-step">
+                <h3>1. 词法分析</h3>
+                <div class="token-list">
+                    <div class="token">SELECT</div>
+                    <div class="token">username</div>
+                    <div class="token">,</div>
+                    <div class="token">age</div>
+                    <div class="token">FROM</div>
+                    <div class="token">users</div>
+                    <div class="token">WHERE</div>
+                    <div class="token">age</div>
+                    <div class="token">></div>
+                    <div class="token">18</div>
+                    <div class="token">ORDER</div>
+                    <div class="token">BY</div>
+                    <div class="token">age</div>
+                    <div class="token">DESC</div>
+                </div>
+            </div>
+            
+            <div class="parsing-step">
+                <h3>2. 语法分析</h3>
+                <div class="syntax-tree">
+                    <div class="tree-node">Query
+                        <div class="tree-node">SELECT Clause
+                            <div class="tree-node">Column: username</div>
+                            <div class="tree-node">Column: age</div>
+                        </div>
+                        <div class="tree-node">FROM Clause
+                            <div class="tree-node">Table: users</div>
+                        </div>
+                        <div class="tree-node">WHERE Clause
+                            <div class="tree-node">Condition: age > 18</div>
+                        </div>
+                        <div class="tree-node">ORDER BY Clause
+                            <div class="tree-node">Column: age DESC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="parsing-step">
+                <h3>3. 语义分析</h3>
+                <div class="semantic-analysis">
+                    <div class="semantic-item">✓ 验证表 'users' 是否存在</div>
+                    <div class="semantic-item">✓ 验证字段 'username' 是否存在</div>
+                    <div class="semantic-item">✓ 验证字段 'age' 是否存在</div>
+                    <div class="semantic-item">✓ 验证 'age' 字段类型是否支持比较操作</div>
+                    <div class="semantic-item">✓ 验证 'age' 字段是否支持排序</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn" disabled>上一步</button>
+            <button id="startBtn">开始演示</button>
+            <button id="nextBtn" disabled>下一步</button>
+        </div>
+    </div>
+
+    <script>
+        const containers = [
+            document.querySelector('.token-list'),
+            document.querySelector('.syntax-tree'),
+            document.querySelector('.semantic-analysis')
+        ];
+        
+        const tokens = document.querySelectorAll('.token');
+        const treeNodes = document.querySelectorAll('.tree-node');
+        const semanticItems = document.querySelectorAll('.semantic-item');
+        
+        const startBtn = document.getElementById('startBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        let currentStep = 0;
+        let currentSubStep = 0;
+        
+        function updateUI() {
+            // Reset all elements
+            containers.forEach(container => container.classList.remove('active-container'));
+            tokens.forEach(token => token.classList.remove('active'));
+            treeNodes.forEach(node => node.classList.remove('active'));
+            semanticItems.forEach(item => item.classList.remove('active'));
+            
+            // Activate current step container
+            if (currentStep > 0) {
+                containers[currentStep - 1].classList.add('active-container');
+            }
+            
+            // Activate elements based on current step
+            if (currentStep === 1) {
+                for (let i = 0; i < currentSubStep; i++) {
+                    tokens[i]?.classList.add('active');
+                }
+            } else if (currentStep === 2) {
+                for (let i = 0; i < currentSubStep; i++) {
+                    treeNodes[i]?.classList.add('active');
+                }
+            } else if (currentStep === 3) {
+                for (let i = 0; i < currentSubStep; i++) {
+                    semanticItems[i]?.classList.add('active');
+                }
+            }
+            
+            // Update buttons
+            prevBtn.disabled = currentStep === 0;
+            nextBtn.disabled = false;
+            startBtn.textContent = currentStep === 0 ? '开始演示' : '重新开始';
+            
+            // Check if we're at the end of current step
+            if ((currentStep === 1 && currentSubStep >= tokens.length) ||
+                (currentStep === 2 && currentSubStep >= treeNodes.length) ||
+                (currentStep === 3 && currentSubStep >= semanticItems.length)) {
+                if (currentStep === 3) {
+                    nextBtn.disabled = true;
+                } else {
+                    currentStep++;
+                    currentSubStep = 0;
+                }
+            }
+        }
+        
+        startBtn.addEventListener('click', () => {
+            currentStep = 1;
+            currentSubStep = 0;
+            updateUI();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentSubStep > 0) {
+                currentSubStep--;
+            } else if (currentStep > 1) {
+                currentStep--;
+                currentSubStep = currentStep === 1 ? tokens.length - 1 :
+                                currentStep === 2 ? treeNodes.length - 1 :
+                                semanticItems.length - 1;
+            }
+            updateUI();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentSubStep++;
+            updateUI();
+        });
+        
+        updateUI();
+    </script>
+</body>
+</html> 
