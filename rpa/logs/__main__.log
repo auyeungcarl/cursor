@@ -1,0 +1,315 @@
+2024-12-29 12:24:23,314 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:24:23,315 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:24:23,315 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 12:24:40,586 - __main__ - ERROR - 密码登录过程中出错: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000107552268 chromedriver + 7098984
+1   chromedriver                        0x000000010754a13a chromedriver + 7065914
+2   chromedriver                        0x0000000106eeed70 chromedriver + 400752
+3   chromedriver                        0x0000000106f3dbd3 chromedriver + 723923
+4   chromedriver                        0x0000000106f3ded1 chromedriver + 724689
+5   chromedriver                        0x0000000106f83e74 chromedriver + 1011316
+6   chromedriver                        0x0000000106f6223d chromedriver + 873021
+7   chromedriver                        0x0000000106f8115e chromedriver + 999774
+8   chromedriver                        0x0000000106f61fb3 chromedriver + 872371
+9   chromedriver                        0x0000000106f305c2 chromedriver + 669122
+10  chromedriver                        0x0000000106f3159e chromedriver + 673182
+11  chromedriver                        0x0000000107517020 chromedriver + 6856736
+12  chromedriver                        0x000000010751b050 chromedriver + 6873168
+13  chromedriver                        0x00000001074f93d7 chromedriver + 6734807
+14  chromedriver                        0x000000010751b9ee chromedriver + 6875630
+15  chromedriver                        0x00000001074e8c14 chromedriver + 6667284
+16  chromedriver                        0x0000000107538778 chromedriver + 6993784
+17  chromedriver                        0x0000000107538936 chromedriver + 6994230
+18  chromedriver                        0x0000000107549d18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:24:40,594 - __main__ - ERROR - 登录失败！
+2024-12-29 12:24:40,794 - __main__ - INFO - 浏览器已关闭
+2024-12-29 12:25:52,931 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:25:52,932 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:25:52,932 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 12:25:58,356 - __main__ - INFO - 切换到密码登录模式
+2024-12-29 12:25:58,778 - __main__ - INFO - 已输入登录信息
+2024-12-29 12:25:58,905 - __main__ - INFO - 点击登录按钮
+2024-12-29 12:25:58,931 - __main__ - WARNING - 检测到验证码，请在20秒内手动完成验证
+2024-12-29 12:26:24,542 - __main__ - ERROR - 检查登录状态时出错: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x000000010c489268 chromedriver + 7098984
+1   chromedriver                        0x000000010c48113a chromedriver + 7065914
+2   chromedriver                        0x000000010be25d70 chromedriver + 400752
+3   chromedriver                        0x000000010bdfb89f chromedriver + 227487
+4   chromedriver                        0x000000010bea148d chromedriver + 906381
+5   chromedriver                        0x000000010beb7b35 chromedriver + 998197
+6   chromedriver                        0x000000010be98fb3 chromedriver + 872371
+7   chromedriver                        0x000000010be675c2 chromedriver + 669122
+8   chromedriver                        0x000000010be6859e chromedriver + 673182
+9   chromedriver                        0x000000010c44e020 chromedriver + 6856736
+10  chromedriver                        0x000000010c452050 chromedriver + 6873168
+11  chromedriver                        0x000000010c4303d7 chromedriver + 6734807
+12  chromedriver                        0x000000010c4529ee chromedriver + 6875630
+13  chromedriver                        0x000000010c41fc14 chromedriver + 6667284
+14  chromedriver                        0x000000010c46f778 chromedriver + 6993784
+15  chromedriver                        0x000000010c46f936 chromedriver + 6994230
+16  chromedriver                        0x000000010c480d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:26:24,553 - __main__ - ERROR - 密码登录失败
+2024-12-29 12:26:24,553 - __main__ - ERROR - 登录失败！
+2024-12-29 12:26:24,764 - __main__ - INFO - 浏览器已关闭
+2024-12-29 12:27:19,627 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:27:19,629 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:27:19,629 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 12:27:21,270 - __main__ - INFO - 已经在密码登录模式或无需切换
+2024-12-29 12:27:21,300 - __main__ - ERROR - 密码登录过程中出错: Message: no such element: Unable to locate element: {"method":"css selector","selector":".SignFlow-password input"}
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000105651268 chromedriver + 7098984
+1   chromedriver                        0x000000010564913a chromedriver + 7065914
+2   chromedriver                        0x0000000104fedd70 chromedriver + 400752
+3   chromedriver                        0x000000010503cbd3 chromedriver + 723923
+4   chromedriver                        0x000000010503ced1 chromedriver + 724689
+5   chromedriver                        0x0000000105082e74 chromedriver + 1011316
+6   chromedriver                        0x000000010506123d chromedriver + 873021
+7   chromedriver                        0x000000010508015e chromedriver + 999774
+8   chromedriver                        0x0000000105060fb3 chromedriver + 872371
+9   chromedriver                        0x000000010502f5c2 chromedriver + 669122
+10  chromedriver                        0x000000010503059e chromedriver + 673182
+11  chromedriver                        0x0000000105616020 chromedriver + 6856736
+12  chromedriver                        0x000000010561a050 chromedriver + 6873168
+13  chromedriver                        0x00000001055f83d7 chromedriver + 6734807
+14  chromedriver                        0x000000010561a9ee chromedriver + 6875630
+15  chromedriver                        0x00000001055e7c14 chromedriver + 6667284
+16  chromedriver                        0x0000000105637778 chromedriver + 6993784
+17  chromedriver                        0x0000000105637936 chromedriver + 6994230
+18  chromedriver                        0x0000000105648d18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:27:21,301 - __main__ - ERROR - 登录失败！
+2024-12-29 12:27:21,475 - __main__ - INFO - 浏览器已关闭
+2024-12-29 12:28:20,524 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:28:20,525 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:28:20,525 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 12:28:22,865 - __main__ - INFO - 切换到密码登录模式
+2024-12-29 12:28:23,249 - __main__ - INFO - 已输入登录信息
+2024-12-29 12:28:23,359 - __main__ - INFO - 点击登录按钮
+2024-12-29 12:28:23,383 - __main__ - WARNING - 检测到验证码，请在20秒内手动完成验证
+2024-12-29 12:28:53,578 - __main__ - WARNING - 登录状态检查超时
+2024-12-29 12:28:53,579 - __main__ - ERROR - 密码登录失败
+2024-12-29 12:28:53,579 - __main__ - ERROR - 登录失败！
+2024-12-29 12:28:53,738 - __main__ - INFO - 浏览器已关闭
+2024-12-29 12:30:03,949 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:30:03,950 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:30:03,950 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 12:30:07,196 - __main__ - INFO - 切换到密码登录模式
+2024-12-29 12:30:07,733 - __main__ - INFO - 已输入登录信息
+2024-12-29 12:30:07,856 - __main__ - INFO - 点击登录按钮
+2024-12-29 12:30:07,883 - __main__ - WARNING - 检测到验证码，请在20秒内手动完成验证
+2024-12-29 12:30:27,887 - __main__ - ERROR - 检查登录状态时出错: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x000000011014e268 chromedriver + 7098984
+1   chromedriver                        0x000000011014613a chromedriver + 7065914
+2   chromedriver                        0x000000010faead70 chromedriver + 400752
+3   chromedriver                        0x000000010fac089f chromedriver + 227487
+4   chromedriver                        0x000000010fb6648d chromedriver + 906381
+5   chromedriver                        0x000000010fb7cb35 chromedriver + 998197
+6   chromedriver                        0x000000010fb5dfb3 chromedriver + 872371
+7   chromedriver                        0x000000010fb2c5c2 chromedriver + 669122
+8   chromedriver                        0x000000010fb2d59e chromedriver + 673182
+9   chromedriver                        0x0000000110113020 chromedriver + 6856736
+10  chromedriver                        0x0000000110117050 chromedriver + 6873168
+11  chromedriver                        0x00000001100f53d7 chromedriver + 6734807
+12  chromedriver                        0x00000001101179ee chromedriver + 6875630
+13  chromedriver                        0x00000001100e4c14 chromedriver + 6667284
+14  chromedriver                        0x0000000110134778 chromedriver + 6993784
+15  chromedriver                        0x0000000110134936 chromedriver + 6994230
+16  chromedriver                        0x0000000110145d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:30:27,887 - __main__ - ERROR - 密码登录失败
+2024-12-29 12:30:27,887 - __main__ - ERROR - 登录失败！
+2024-12-29 12:30:28,004 - __main__ - INFO - 浏览器已关闭
+2024-12-29 12:31:07,713 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:31:07,736 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:31:07,755 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 12:31:15,719 - __main__ - INFO - 已经在密码登录模式或无需切换
+2024-12-29 12:31:15,721 - __main__ - ERROR - 密码登录过程中出错: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x000000010fd5e268 chromedriver + 7098984
+1   chromedriver                        0x000000010fd5613a chromedriver + 7065914
+2   chromedriver                        0x000000010f6fad70 chromedriver + 400752
+3   chromedriver                        0x000000010f6d089f chromedriver + 227487
+4   chromedriver                        0x000000010f77648d chromedriver + 906381
+5   chromedriver                        0x000000010f78cb35 chromedriver + 998197
+6   chromedriver                        0x000000010f76dfb3 chromedriver + 872371
+7   chromedriver                        0x000000010f73c5c2 chromedriver + 669122
+8   chromedriver                        0x000000010f73d59e chromedriver + 673182
+9   chromedriver                        0x000000010fd23020 chromedriver + 6856736
+10  chromedriver                        0x000000010fd27050 chromedriver + 6873168
+11  chromedriver                        0x000000010fd053d7 chromedriver + 6734807
+12  chromedriver                        0x000000010fd279ee chromedriver + 6875630
+13  chromedriver                        0x000000010fcf4c14 chromedriver + 6667284
+14  chromedriver                        0x000000010fd44778 chromedriver + 6993784
+15  chromedriver                        0x000000010fd44936 chromedriver + 6994230
+16  chromedriver                        0x000000010fd55d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:31:15,721 - __main__ - ERROR - 登录失败！
+2024-12-29 12:31:15,868 - __main__ - INFO - 浏览器已关闭
+2024-12-29 12:32:09,698 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:32:09,721 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:32:09,741 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 12:32:20,196 - __main__ - INFO - 已经在密码登录模式或无需切换
+2024-12-29 12:32:20,212 - __main__ - ERROR - 密码登录过程中出错: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x0000000104d1e268 chromedriver + 7098984
+1   chromedriver                        0x0000000104d1613a chromedriver + 7065914
+2   chromedriver                        0x00000001046bad70 chromedriver + 400752
+3   chromedriver                        0x000000010469089f chromedriver + 227487
+4   chromedriver                        0x000000010473648d chromedriver + 906381
+5   chromedriver                        0x000000010474cb35 chromedriver + 998197
+6   chromedriver                        0x000000010472dfb3 chromedriver + 872371
+7   chromedriver                        0x00000001046fc5c2 chromedriver + 669122
+8   chromedriver                        0x00000001046fd59e chromedriver + 673182
+9   chromedriver                        0x0000000104ce3020 chromedriver + 6856736
+10  chromedriver                        0x0000000104ce7050 chromedriver + 6873168
+11  chromedriver                        0x0000000104cc53d7 chromedriver + 6734807
+12  chromedriver                        0x0000000104ce79ee chromedriver + 6875630
+13  chromedriver                        0x0000000104cb4c14 chromedriver + 6667284
+14  chromedriver                        0x0000000104d04778 chromedriver + 6993784
+15  chromedriver                        0x0000000104d04936 chromedriver + 6994230
+16  chromedriver                        0x0000000104d15d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:32:20,232 - __main__ - ERROR - 登录失败！
+2024-12-29 12:32:20,404 - __main__ - INFO - 浏览器已关闭
+2024-12-29 12:35:08,899 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:35:08,921 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:35:08,922 - __main__ - INFO - 尝试使用短信验证码登录
+2024-12-29 12:35:17,089 - __main__ - ERROR - 短信验证码登录过程中出错: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x0000000108915268 chromedriver + 7098984
+1   chromedriver                        0x000000010890d13a chromedriver + 7065914
+2   chromedriver                        0x00000001082b1d70 chromedriver + 400752
+3   chromedriver                        0x000000010828789f chromedriver + 227487
+4   chromedriver                        0x000000010832d48d chromedriver + 906381
+5   chromedriver                        0x0000000108343b35 chromedriver + 998197
+6   chromedriver                        0x0000000108324fb3 chromedriver + 872371
+7   chromedriver                        0x00000001082f35c2 chromedriver + 669122
+8   chromedriver                        0x00000001082f459e chromedriver + 673182
+9   chromedriver                        0x00000001088da020 chromedriver + 6856736
+10  chromedriver                        0x00000001088de050 chromedriver + 6873168
+11  chromedriver                        0x00000001088bc3d7 chromedriver + 6734807
+12  chromedriver                        0x00000001088de9ee chromedriver + 6875630
+13  chromedriver                        0x00000001088abc14 chromedriver + 6667284
+14  chromedriver                        0x00000001088fb778 chromedriver + 6993784
+15  chromedriver                        0x00000001088fb936 chromedriver + 6994230
+16  chromedriver                        0x000000010890cd18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:35:17,124 - __main__ - ERROR - 登录失败！
+2024-12-29 12:35:17,297 - __main__ - INFO - 浏览器已关闭
+2024-12-29 12:36:36,274 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:36:36,296 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:36:36,296 - __main__ - INFO - 尝试使用短信验证码登录
+2024-12-29 12:36:50,132 - __main__ - ERROR - 短信验证码登录过程中出错: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010cebb268 chromedriver + 7098984
+1   chromedriver                        0x000000010ceb313a chromedriver + 7065914
+2   chromedriver                        0x000000010c857d70 chromedriver + 400752
+3   chromedriver                        0x000000010c8a6bd3 chromedriver + 723923
+4   chromedriver                        0x000000010c8a6ed1 chromedriver + 724689
+5   chromedriver                        0x000000010c8ece74 chromedriver + 1011316
+6   chromedriver                        0x000000010c8cb23d chromedriver + 873021
+7   chromedriver                        0x000000010c8ea15e chromedriver + 999774
+8   chromedriver                        0x000000010c8cafb3 chromedriver + 872371
+9   chromedriver                        0x000000010c8995c2 chromedriver + 669122
+10  chromedriver                        0x000000010c89a59e chromedriver + 673182
+11  chromedriver                        0x000000010ce80020 chromedriver + 6856736
+12  chromedriver                        0x000000010ce84050 chromedriver + 6873168
+13  chromedriver                        0x000000010ce623d7 chromedriver + 6734807
+14  chromedriver                        0x000000010ce849ee chromedriver + 6875630
+15  chromedriver                        0x000000010ce51c14 chromedriver + 6667284
+16  chromedriver                        0x000000010cea1778 chromedriver + 6993784
+17  chromedriver                        0x000000010cea1936 chromedriver + 6994230
+18  chromedriver                        0x000000010ceb2d18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:36:50,133 - __main__ - ERROR - 登录失败！
+2024-12-29 12:36:50,348 - __main__ - INFO - 浏览器已关闭
+2024-12-29 12:41:12,399 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 12:41:12,399 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 12:41:12,400 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 12:41:24,325 - __main__ - ERROR - 密码登录过程中出错: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x000000010b97d268 chromedriver + 7098984
+1   chromedriver                        0x000000010b97513a chromedriver + 7065914
+2   chromedriver                        0x000000010b319d70 chromedriver + 400752
+3   chromedriver                        0x000000010b2ef89f chromedriver + 227487
+4   chromedriver                        0x000000010b39548d chromedriver + 906381
+5   chromedriver                        0x000000010b3abb35 chromedriver + 998197
+6   chromedriver                        0x000000010b38cfb3 chromedriver + 872371
+7   chromedriver                        0x000000010b35b5c2 chromedriver + 669122
+8   chromedriver                        0x000000010b35c59e chromedriver + 673182
+9   chromedriver                        0x000000010b942020 chromedriver + 6856736
+10  chromedriver                        0x000000010b946050 chromedriver + 6873168
+11  chromedriver                        0x000000010b9243d7 chromedriver + 6734807
+12  chromedriver                        0x000000010b9469ee chromedriver + 6875630
+13  chromedriver                        0x000000010b913c14 chromedriver + 6667284
+14  chromedriver                        0x000000010b963778 chromedriver + 6993784
+15  chromedriver                        0x000000010b963936 chromedriver + 6994230
+16  chromedriver                        0x000000010b974d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:41:24,326 - __main__ - ERROR - 登录失败！
+2024-12-29 12:41:24,508 - __main__ - INFO - 浏览器已关闭
+2024-12-29 13:37:17,680 - __main__ - INFO - 未找到已保存的Cookies
+2024-12-29 13:37:17,694 - __main__ - INFO - 使用Cookies登录失败
+2024-12-29 13:37:17,715 - __main__ - INFO - 尝试使用密码登录
+2024-12-29 13:37:28,989 - __main__ - ERROR - 密码登录过程中出错: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000109eba268 chromedriver + 7098984
+1   chromedriver                        0x0000000109eb213a chromedriver + 7065914
+2   chromedriver                        0x0000000109856d70 chromedriver + 400752
+3   chromedriver                        0x00000001098a5bd3 chromedriver + 723923
+4   chromedriver                        0x00000001098a5ed1 chromedriver + 724689
+5   chromedriver                        0x00000001098ebe74 chromedriver + 1011316
+6   chromedriver                        0x00000001098ca23d chromedriver + 873021
+7   chromedriver                        0x00000001098e915e chromedriver + 999774
+8   chromedriver                        0x00000001098c9fb3 chromedriver + 872371
+9   chromedriver                        0x00000001098985c2 chromedriver + 669122
+10  chromedriver                        0x000000010989959e chromedriver + 673182
+11  chromedriver                        0x0000000109e7f020 chromedriver + 6856736
+12  chromedriver                        0x0000000109e83050 chromedriver + 6873168
+13  chromedriver                        0x0000000109e613d7 chromedriver + 6734807
+14  chromedriver                        0x0000000109e839ee chromedriver + 6875630
+15  chromedriver                        0x0000000109e50c14 chromedriver + 6667284
+16  chromedriver                        0x0000000109ea0778 chromedriver + 6993784
+17  chromedriver                        0x0000000109ea0936 chromedriver + 6994230
+18  chromedriver                        0x0000000109eb1d18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 13:37:28,989 - __main__ - ERROR - 登录失败！
+2024-12-29 13:37:29,207 - __main__ - INFO - 浏览器已关闭

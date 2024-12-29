@@ -1,0 +1,5 @@
+selenium>=4.15.2
+webdriver-manager>=4.0.1
+loguru>=0.7.2
+python-dotenv>=1.0.0
+undetected-chromedriver>=3.5.4 

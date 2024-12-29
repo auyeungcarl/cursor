@@ -1,0 +1,277 @@
+2024-12-29 12:46:07,555 - INFO - ====== WebDriver manager ======
+2024-12-29 12:46:07,745 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:46:08,612 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:46:09,477 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:46:09,477 - ERROR - 浏览器驱动初始化失败: WebDriver.__init__() got multiple values for argument 'options'
+2024-12-29 12:46:09,477 - ERROR - 登录过程中出现错误: WebDriver.__init__() got multiple values for argument 'options'
+2024-12-29 12:46:45,687 - INFO - ====== WebDriver manager ======
+2024-12-29 12:46:45,885 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:46:46,520 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:46:47,096 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:46:47,096 - ERROR - 浏览器驱动初始化失败: WebDriver.__init__() got multiple values for argument 'options'
+2024-12-29 12:46:47,096 - ERROR - 登录过程中出现错误: WebDriver.__init__() got multiple values for argument 'options'
+2024-12-29 12:48:03,789 - INFO - ====== WebDriver manager ======
+2024-12-29 12:48:03,973 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:48:04,499 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:48:05,345 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:48:07,253 - INFO - 浏览器驱动初始化成功
+2024-12-29 12:48:11,194 - INFO - 成功打开知乎登录页面
+2024-12-29 12:48:13,735 - ERROR - 登录过程中出现错误: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=131.0.6778.205); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x000000010873d268 chromedriver + 7098984
+1   chromedriver                        0x000000010873513a chromedriver + 7065914
+2   chromedriver                        0x00000001080d9d70 chromedriver + 400752
+3   chromedriver                        0x00000001080dfd1e chromedriver + 425246
+4   chromedriver                        0x00000001080e2253 chromedriver + 434771
+5   chromedriver                        0x00000001080e2303 chromedriver + 434947
+6   chromedriver                        0x000000010812a93a chromedriver + 731450
+7   chromedriver                        0x000000010811f352 chromedriver + 684882
+8   chromedriver                        0x000000010814d212 chromedriver + 872978
+9   chromedriver                        0x000000010811d2b8 chromedriver + 676536
+10  chromedriver                        0x000000010814d3ce chromedriver + 873422
+11  chromedriver                        0x000000010816c15e chromedriver + 999774
+12  chromedriver                        0x000000010814cfb3 chromedriver + 872371
+13  chromedriver                        0x000000010811b5c2 chromedriver + 669122
+14  chromedriver                        0x000000010811c59e chromedriver + 673182
+15  chromedriver                        0x0000000108702020 chromedriver + 6856736
+16  chromedriver                        0x0000000108706050 chromedriver + 6873168
+17  chromedriver                        0x00000001086e43d7 chromedriver + 6734807
+18  chromedriver                        0x00000001087069ee chromedriver + 6875630
+19  chromedriver                        0x00000001086d3c14 chromedriver + 6667284
+20  chromedriver                        0x0000000108723778 chromedriver + 6993784
+21  chromedriver                        0x0000000108723936 chromedriver + 6994230
+22  chromedriver                        0x0000000108734d18 chromedriver + 7064856
+23  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+24  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:48:57,760 - INFO - ====== WebDriver manager ======
+2024-12-29 12:48:57,954 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:48:58,798 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:48:59,285 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:49:00,979 - INFO - 浏览器驱动初始化成功
+2024-12-29 12:49:05,629 - INFO - 成功打开知乎登录页面
+2024-12-29 12:49:11,693 - INFO - 已输入账号密码
+2024-12-29 12:49:12,836 - INFO - 已点击登录按钮
+2024-12-29 12:49:14,858 - WARNING - 检测到验证码，请在20秒内手动完成验证
+2024-12-29 12:49:27,070 - INFO - 请在20秒内完成验证...
+2024-12-29 12:50:28,680 - INFO - 请在10秒内完成验证...
+2024-12-29 12:50:47,756 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(54, 'Connection reset by peer')': /session/99eb1930ed73c5d181b6b81ee2d7d9dd
+2024-12-29 12:50:47,781 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10b553590>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/99eb1930ed73c5d181b6b81ee2d7d9dd
+2024-12-29 12:50:47,784 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10b5521d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/99eb1930ed73c5d181b6b81ee2d7d9dd
+2024-12-29 12:52:32,011 - INFO - ====== WebDriver manager ======
+2024-12-29 12:52:32,225 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:52:32,914 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:52:33,499 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:52:35,413 - INFO - 浏览器驱动初始化成功
+2024-12-29 12:52:41,845 - INFO - 成功打开知乎登录页面
+2024-12-29 12:52:43,863 - ERROR - 登录过程中出现错误: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x0000000106420268 chromedriver + 7098984
+1   chromedriver                        0x000000010641813a chromedriver + 7065914
+2   chromedriver                        0x0000000105dbcd70 chromedriver + 400752
+3   chromedriver                        0x0000000105d9289f chromedriver + 227487
+4   chromedriver                        0x0000000105e3848d chromedriver + 906381
+5   chromedriver                        0x0000000105e4eb35 chromedriver + 998197
+6   chromedriver                        0x0000000105e2ffb3 chromedriver + 872371
+7   chromedriver                        0x0000000105dfe5c2 chromedriver + 669122
+8   chromedriver                        0x0000000105dff59e chromedriver + 673182
+9   chromedriver                        0x00000001063e5020 chromedriver + 6856736
+10  chromedriver                        0x00000001063e9050 chromedriver + 6873168
+11  chromedriver                        0x00000001063c73d7 chromedriver + 6734807
+12  chromedriver                        0x00000001063e99ee chromedriver + 6875630
+13  chromedriver                        0x00000001063b6c14 chromedriver + 6667284
+14  chromedriver                        0x0000000106406778 chromedriver + 6993784
+15  chromedriver                        0x0000000106406936 chromedriver + 6994230
+16  chromedriver                        0x0000000106417d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:52:52,628 - INFO - ====== WebDriver manager ======
+2024-12-29 12:52:52,913 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:52:53,511 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:52:54,092 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:52:55,831 - INFO - 浏览器驱动初始化成功
+2024-12-29 12:53:00,712 - INFO - 成功打开知乎登录页面
+2024-12-29 12:53:02,738 - ERROR - 登录过程中出现错误: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x0000000101bdb268 chromedriver + 7098984
+1   chromedriver                        0x0000000101bd313a chromedriver + 7065914
+2   chromedriver                        0x0000000101577d70 chromedriver + 400752
+3   chromedriver                        0x000000010154d89f chromedriver + 227487
+4   chromedriver                        0x00000001015f348d chromedriver + 906381
+5   chromedriver                        0x0000000101609b35 chromedriver + 998197
+6   chromedriver                        0x00000001015eafb3 chromedriver + 872371
+7   chromedriver                        0x00000001015b95c2 chromedriver + 669122
+8   chromedriver                        0x00000001015ba59e chromedriver + 673182
+9   chromedriver                        0x0000000101ba0020 chromedriver + 6856736
+10  chromedriver                        0x0000000101ba4050 chromedriver + 6873168
+11  chromedriver                        0x0000000101b823d7 chromedriver + 6734807
+12  chromedriver                        0x0000000101ba49ee chromedriver + 6875630
+13  chromedriver                        0x0000000101b71c14 chromedriver + 6667284
+14  chromedriver                        0x0000000101bc1778 chromedriver + 6993784
+15  chromedriver                        0x0000000101bc1936 chromedriver + 6994230
+16  chromedriver                        0x0000000101bd2d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:54:23,129 - INFO - ====== WebDriver manager ======
+2024-12-29 12:54:23,330 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:54:23,825 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:54:24,307 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:54:26,121 - INFO - 浏览器驱动初始化成功
+2024-12-29 12:54:30,570 - INFO - 成功打开知乎登录页面
+2024-12-29 12:54:32,578 - ERROR - 登录过程中出现错误: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x000000010b035268 chromedriver + 7098984
+1   chromedriver                        0x000000010b02d13a chromedriver + 7065914
+2   chromedriver                        0x000000010a9d1d70 chromedriver + 400752
+3   chromedriver                        0x000000010a9a789f chromedriver + 227487
+4   chromedriver                        0x000000010aa4d48d chromedriver + 906381
+5   chromedriver                        0x000000010aa63b35 chromedriver + 998197
+6   chromedriver                        0x000000010aa44fb3 chromedriver + 872371
+7   chromedriver                        0x000000010aa135c2 chromedriver + 669122
+8   chromedriver                        0x000000010aa1459e chromedriver + 673182
+9   chromedriver                        0x000000010affa020 chromedriver + 6856736
+10  chromedriver                        0x000000010affe050 chromedriver + 6873168
+11  chromedriver                        0x000000010afdc3d7 chromedriver + 6734807
+12  chromedriver                        0x000000010affe9ee chromedriver + 6875630
+13  chromedriver                        0x000000010afcbc14 chromedriver + 6667284
+14  chromedriver                        0x000000010b01b778 chromedriver + 6993784
+15  chromedriver                        0x000000010b01b936 chromedriver + 6994230
+16  chromedriver                        0x000000010b02cd18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:57:27,692 - INFO - ====== WebDriver manager ======
+2024-12-29 12:57:27,883 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:57:28,726 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:57:29,213 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:57:29,213 - ERROR - 浏览器驱动初始化失败: WebDriver.__init__() got multiple values for argument 'options'
+2024-12-29 12:57:29,213 - ERROR - 登录过程中出现错误: WebDriver.__init__() got multiple values for argument 'options'
+2024-12-29 12:58:02,962 - INFO - ====== WebDriver manager ======
+2024-12-29 12:58:03,154 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:58:03,750 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:58:04,420 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:58:06,327 - INFO - 浏览器驱动初始化成功
+2024-12-29 12:58:09,143 - INFO - 成功打开知乎登录页面
+2024-12-29 12:58:15,571 - ERROR - 登录过程中出现错误: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x000000010ca52268 chromedriver + 7098984
+1   chromedriver                        0x000000010ca4a13a chromedriver + 7065914
+2   chromedriver                        0x000000010c3eed70 chromedriver + 400752
+3   chromedriver                        0x000000010c3c489f chromedriver + 227487
+4   chromedriver                        0x000000010c46a48d chromedriver + 906381
+5   chromedriver                        0x000000010c480b35 chromedriver + 998197
+6   chromedriver                        0x000000010c461fb3 chromedriver + 872371
+7   chromedriver                        0x000000010c4305c2 chromedriver + 669122
+8   chromedriver                        0x000000010c43159e chromedriver + 673182
+9   chromedriver                        0x000000010ca17020 chromedriver + 6856736
+10  chromedriver                        0x000000010ca1b050 chromedriver + 6873168
+11  chromedriver                        0x000000010c9f93d7 chromedriver + 6734807
+12  chromedriver                        0x000000010ca1b9ee chromedriver + 6875630
+13  chromedriver                        0x000000010c9e8c14 chromedriver + 6667284
+14  chromedriver                        0x000000010ca38778 chromedriver + 6993784
+15  chromedriver                        0x000000010ca38936 chromedriver + 6994230
+16  chromedriver                        0x000000010ca49d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:58:44,942 - INFO - ====== WebDriver manager ======
+2024-12-29 12:58:45,135 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:58:46,193 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:58:46,773 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:58:48,498 - INFO - 浏览器驱动初始化成功
+2024-12-29 12:58:51,337 - INFO - 成功打开知乎登录页面
+2024-12-29 12:58:53,365 - INFO - 已经在二维码登录模式
+2024-12-29 12:58:53,365 - INFO - 请使用知乎 App 扫描二维码登录
+2024-12-29 12:58:53,367 - ERROR - 浏览器窗口已关闭，终止登录
+2024-12-29 12:59:03,106 - INFO - ====== WebDriver manager ======
+2024-12-29 12:59:03,291 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:59:03,981 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:59:04,601 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:59:06,352 - INFO - 浏览器驱动初始化成功
+2024-12-29 12:59:09,721 - INFO - 成功打开知乎登录页面
+2024-12-29 12:59:21,023 - ERROR - 登录过程中出现错误: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010d591268 chromedriver + 7098984
+1   chromedriver                        0x000000010d58913a chromedriver + 7065914
+2   chromedriver                        0x000000010cf2dd70 chromedriver + 400752
+3   chromedriver                        0x000000010cf7cbd3 chromedriver + 723923
+4   chromedriver                        0x000000010cf7ced1 chromedriver + 724689
+5   chromedriver                        0x000000010cfc2e74 chromedriver + 1011316
+6   chromedriver                        0x000000010cfa123d chromedriver + 873021
+7   chromedriver                        0x000000010cfc015e chromedriver + 999774
+8   chromedriver                        0x000000010cfa0fb3 chromedriver + 872371
+9   chromedriver                        0x000000010cf6f5c2 chromedriver + 669122
+10  chromedriver                        0x000000010cf7059e chromedriver + 673182
+11  chromedriver                        0x000000010d556020 chromedriver + 6856736
+12  chromedriver                        0x000000010d55a050 chromedriver + 6873168
+13  chromedriver                        0x000000010d5383d7 chromedriver + 6734807
+14  chromedriver                        0x000000010d55a9ee chromedriver + 6875630
+15  chromedriver                        0x000000010d527c14 chromedriver + 6667284
+16  chromedriver                        0x000000010d577778 chromedriver + 6993784
+17  chromedriver                        0x000000010d577936 chromedriver + 6994230
+18  chromedriver                        0x000000010d588d18 chromedriver + 7064856
+19  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
+2024-12-29 12:59:23,488 - INFO - ====== WebDriver manager ======
+2024-12-29 12:59:23,690 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:59:24,210 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 12:59:24,678 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 12:59:24,678 - ERROR - 浏览器驱动初始化失败: WebDriver.__init__() got multiple values for argument 'options'
+2024-12-29 12:59:24,678 - ERROR - 登录过程中出现错误: WebDriver.__init__() got multiple values for argument 'options'
+2024-12-29 13:00:31,195 - INFO - ====== WebDriver manager ======
+2024-12-29 13:00:31,387 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:00:31,578 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:00:32,408 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:00:34,103 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:00:37,440 - INFO - 成功打开知乎登录页面
+2024-12-29 13:00:45,454 - INFO - 已输入账号密码
+2024-12-29 13:00:47,286 - INFO - 已点击登录按钮
+2024-12-29 13:00:49,315 - WARNING - 检测到验证码，请在30秒内手动完成验证
+2024-12-29 13:01:00,537 - INFO - 请在30秒内完成验证...
+2024-12-29 13:01:43,234 - INFO - 验证码验证成功，登录成功！
+2024-12-29 13:01:56,055 - INFO - ====== WebDriver manager ======
+2024-12-29 13:01:56,254 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:01:56,771 - INFO - Get LATEST chromedriver version for google-chrome
+2024-12-29 13:01:57,245 - INFO - Driver [/Users/carl/.wdm/drivers/chromedriver/mac64/131.0.6778.204/chromedriver-mac-x64/chromedriver] found in cache
+2024-12-29 13:01:59,021 - INFO - 浏览器驱动初始化成功
+2024-12-29 13:02:02,259 - INFO - 成功打开知乎登录页面
+2024-12-29 13:02:10,901 - INFO - 已输入账号密码
+2024-12-29 13:02:12,916 - INFO - 已点击登录按钮
+2024-12-29 13:02:14,955 - WARNING - 检测到验证码，请在30秒内手动完成验证
+2024-12-29 13:02:26,164 - INFO - 请在30秒内完成验证...
+2024-12-29 13:02:47,069 - ERROR - 登录过程中出现错误: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.205)
+Stacktrace:
+0   chromedriver                        0x000000010a6cd268 chromedriver + 7098984
+1   chromedriver                        0x000000010a6c513a chromedriver + 7065914
+2   chromedriver                        0x000000010a069d70 chromedriver + 400752
+3   chromedriver                        0x000000010a03f89f chromedriver + 227487
+4   chromedriver                        0x000000010a0e548d chromedriver + 906381
+5   chromedriver                        0x000000010a0fbb35 chromedriver + 998197
+6   chromedriver                        0x000000010a0dcfb3 chromedriver + 872371
+7   chromedriver                        0x000000010a0ab5c2 chromedriver + 669122
+8   chromedriver                        0x000000010a0ac59e chromedriver + 673182
+9   chromedriver                        0x000000010a692020 chromedriver + 6856736
+10  chromedriver                        0x000000010a696050 chromedriver + 6873168
+11  chromedriver                        0x000000010a6743d7 chromedriver + 6734807
+12  chromedriver                        0x000000010a6969ee chromedriver + 6875630
+13  chromedriver                        0x000000010a663c14 chromedriver + 6667284
+14  chromedriver                        0x000000010a6b3778 chromedriver + 6993784
+15  chromedriver                        0x000000010a6b3936 chromedriver + 6994230
+16  chromedriver                        0x000000010a6c4d18 chromedriver + 7064856
+17  libsystem_pthread.dylib             0x00007ff8028c618b _pthread_start + 99
+18  libsystem_pthread.dylib             0x00007ff8028c1ae3 thread_start + 15
+
