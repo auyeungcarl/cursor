@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: wxapp
+  # 环境配置
+  profiles:
+    # 默认激活开发环境
+    active: dev
+    # 环境配置组
+    group:
+      dev: dev
+      test: test
+      prod: prod
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+# MyBatis Plus配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.wxapp.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+
+
