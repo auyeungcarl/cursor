@@ -1,0 +1,55 @@
+{
+	"pages": [ 
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/userinfo/profile",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/userinfo/userinfo",
+			"style": {
+				"navigationBarTitleText": "个人信息"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "臻选选择",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#888888",
+		"selectedColor": "#f33",
+		"backgroundColor": "#f5f5f7",
+		"borderStyle": "black",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "/static/home.png",
+				"selectedIconPath": "/static/home.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/userinfo/profile",
+				"iconPath": "/static/user_tab.png",
+				"selectedIconPath": "/static/user_tab.png",
+				"text": "我的"
+			}
+		]
+	}
+}
